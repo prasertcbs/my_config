@@ -1,2 +1,2 @@
-# my_config
+# my configuration files
 various configuration files
