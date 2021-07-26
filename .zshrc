@@ -126,6 +126,8 @@ alias df='df -h'
 alias h=history
 alias h0='history | cut -c 8-'
 
+alias rg='rg -i'
+
 alias cc='cd ~/.config'
 
 # Debian apt
