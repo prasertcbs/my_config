@@ -20,6 +20,8 @@ Import-Module Get-ChildItemColor
 Set-Alias ll Get-ChildItem -option AllScope
 Set-Alias lw Get-ChildItemColorFormatWide -option AllScope
 
+Import-Module z
+
 Import-Module posh-git
 Import-Module oh-my-posh
 Set-PoshPrompt -Theme negligible #prasert_wopain
@@ -40,7 +42,7 @@ function lt($path) {
 list directory
 
 .EXAMPLE
-ld *.csv
+ld p*
 #>
 function ld($path) { 
   Get-ChildItem -Path $path -Directory
@@ -67,13 +69,3 @@ function hh {
   Get-Content (Get-PSReadLineOption).HistorySavePath
 }
 
-# if ($IsWindows) {
-#   function l { cmd /c ls --color -F $args[0] $args[1] }
-#   function ll {cmd /c ls --color -lF $args[0] $args[1]}
-#   function ld { cmd /c ls --color -dF */ }
-# }
-
-if ($IsMacOS) {
-  $env:path += '/Users/prasert/opt/miniconda3/bin:/Users/prasert/opt/miniconda3/condabin:/Users/prasert/bin:/usr/local/bin:/Users/prasert/miniconda3/bin:/usr/local/opt/libpq/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public'
-  Remove-Alias rp -force
-}
