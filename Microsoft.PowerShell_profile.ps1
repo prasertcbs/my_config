@@ -12,6 +12,7 @@ Set-ExecutionPolicy RemoteSigned -scope currentuser
 install-module get-childitemcolor -scope currentuser -allowclobber
 Install-Module oh-my-posh -scope currentuser
 Install-Module posh-git -scope currentuser
+Install-Module z
 
 > download nerd font: https://www.nerdfonts.com/font-downloads
 install *mono* font
@@ -24,7 +25,10 @@ Import-Module z
 
 Import-Module posh-git
 Import-Module oh-my-posh
-Set-PoshPrompt -Theme negligible #prasert_wopain
+Set-PoshPrompt -Theme negligible
+# Set-PoshPrompt -Theme powerlevel10k_lean_no_clock
+# Set-PoshPrompt -Theme powerlevel10k_lean
+# Set-PoshPrompt -Theme prasert_wopain
 
 <#
 .SYNOPSIS
@@ -69,3 +73,13 @@ function hh {
   Get-Content (Get-PSReadLineOption).HistorySavePath
 }
 
+# if ($IsWindows) {
+#   function l { cmd /c ls --color -F $args[0] $args[1] }
+#   function ll {cmd /c ls --color -lF $args[0] $args[1]}
+#   function ld { cmd /c ls --color -dF */ }
+# }
+
+if ($IsMacOS) {
+  $env:path += '/Users/prasert/opt/miniconda3/bin:/Users/prasert/opt/miniconda3/condabin:/Users/prasert/bin:/usr/local/bin:/Users/prasert/miniconda3/bin:/usr/local/opt/libpq/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public'
+  Remove-Alias rp -force
+}
