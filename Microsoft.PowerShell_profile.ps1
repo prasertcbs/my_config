@@ -12,7 +12,7 @@ Set-ExecutionPolicy RemoteSigned -scope currentuser
 install-module get-childitemcolor -scope currentuser -allowclobber
 Install-Module oh-my-posh -scope currentuser
 Install-Module posh-git -scope currentuser
-Install-Module z
+Install-Module z -scope currentuser -allowclobber
 
 > download nerd font: https://www.nerdfonts.com/font-downloads
 install *mono* font
@@ -20,6 +20,8 @@ install *mono* font
 Import-Module Get-ChildItemColor
 Set-Alias ll Get-ChildItem -option AllScope
 Set-Alias lw Get-ChildItemColorFormatWide -option AllScope
+
+Set-Alias vim nvim
 
 Import-Module z
 
@@ -78,8 +80,3 @@ function hh {
 #   function ll {cmd /c ls --color -lF $args[0] $args[1]}
 #   function ld { cmd /c ls --color -dF */ }
 # }
-
-if ($IsMacOS) {
-  $env:path += '/Users/prasert/opt/miniconda3/bin:/Users/prasert/opt/miniconda3/condabin:/Users/prasert/bin:/usr/local/bin:/Users/prasert/miniconda3/bin:/usr/local/opt/libpq/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public'
-  Remove-Alias rp -force
-}
