@@ -1,0 +1,53 @@
+# i3: 
+export EDITOR=vim
+
+alias vim=nvim
+
+# alias ls='ls --color=auto'
+# alias ll='ls -lav --ignore=..'   # show long listing of all except ".."
+# alias l='ls -lav --ignore=.?*'   # show long listing but no hidden dotfiles except "."
+# alias l.='ls -a | grep "^\."'
+alias ls=exa
+alias l='ls -a'
+alias ll='ls -al'
+alias l.='fd -H -d 1 "^\."'
+alias ldir='ls -d */'
+alias lf='ls -d */'
+alias tree='exa --tree'
+alias lt='exa --tree'
+alias lt1='exa --tree -L1'
+alias lt2='exa --tree -L2'
+
+alias df='df -h'
+
+alias h=history
+alias h0='history | cut -c 8-'
+
+# tmux
+alias tmuxn='tmux new -s $1'
+alias tmuxa='tmux attach-session -t $1'
+alias tmuxk='tmux kill-session -t $1'
+
+# Debian apt
+alias apt='sudo apt'
+alias cleanup='sudo apt autoremove'
+alias update='sudo apt update -y && sudo apt upgrade -y && sudo apt clean'
+
+# Arch linux pacman
+alias pacman='sudo pacman --color auto'
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+alias update='sudo pacman -Syyu'
+
+# xrandr display resolution
+if xrandr | grep -q 1920x1080
+then
+    xrandr --output Virtual1 --primary --mode 1920x1080_60.00
+else
+    xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
+    xrandr --addmode Virtual1 1920x1080_60.00
+    xrandr --output Virtual1 --primary --mode 1920x1080_60.00
+fi
+# xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
+# xrandr --addmode Virtual1 1920x1080_60.00
+# xrandr --output Virtual1 --primary --mode 1920x1080_60.00
+xset b off
