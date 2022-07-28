@@ -1,0 +1,14 @@
+FontHeight=16
+ThemeFile=gruvbox
+BackspaceSendsBS=yes
+DeleteSendsDEL=yes
+CursorColour=255,128,0
+CursorType=block
+BellType=0
+Font=Cousine NF
+CopyAsRTF=no
+RightClickAction=menu
+Locale=
+Charset=
+Columns=99
+Rows=25
