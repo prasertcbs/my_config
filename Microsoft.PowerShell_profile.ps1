@@ -6,6 +6,9 @@ Set-PSReadLineOption -PredictionSource History
 
 # chcp 65001
 
+# oh-my-posh init pwsh | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\negligible.omp.json" | Invoke-Expression
+
 <# 
 > start PowerShell (no admin)
 Set-ExecutionPolicy RemoteSigned -scope currentuser
@@ -18,16 +21,17 @@ Install-Module z -scope currentuser -allowclobber
 install *mono* font
 #>
 Import-Module Get-ChildItemColor
-Set-Alias ll Get-ChildItem -option AllScope
-Set-Alias lw Get-ChildItemColorFormatWide -option AllScope
 
-Set-Alias vim nvim
+Set-Alias l Get-ChildItemColor -option AllScope
+Set-Alias ll Get-ChildItemColor -option AllScope
+Set-Alias ls Get-ChildItemColor -option AllScope
+Set-Alias lw Get-ChildItemColorFormatWide -option AllScope
 
 Import-Module z
 
-Import-Module posh-git
-Import-Module oh-my-posh
-Set-PoshPrompt -Theme negligible
+# Import-Module posh-git
+# Import-Module oh-my-posh
+# Set-PoshPrompt -Theme negligible
 # Set-PoshPrompt -Theme powerlevel10k_lean_no_clock
 # Set-PoshPrompt -Theme powerlevel10k_lean
 # Set-PoshPrompt -Theme prasert_wopain
@@ -80,3 +84,9 @@ function hh {
 #   function ll {cmd /c ls --color -lF $args[0] $args[1]}
 #   function ld { cmd /c ls --color -dF */ }
 # }
+
+if ($IsMacOS) {
+  $env:path += '/Users/prasert/opt/miniconda3/bin:/Users/prasert/opt/miniconda3/condabin:/Users/prasert/bin:/usr/local/bin:/Users/prasert/miniconda3/bin:/usr/local/opt/libpq/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public'
+  Remove-Alias rp -force
+}
+$env:VIRTUAL_ENV_DISABLE_PROMPT="True"
