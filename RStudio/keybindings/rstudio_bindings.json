@@ -1,0 +1,8 @@
+{
+    "commentUncomment": "Ctrl+/",
+    "expandToLine": "Ctrl+L",
+    "insertPipeOperator": "Alt+5",
+    "goToNextChunk": "Ctrl+Down",
+    "goToPrevChunk": "Ctrl+Up",
+    "goToLine": "Ctrl+G"
+}

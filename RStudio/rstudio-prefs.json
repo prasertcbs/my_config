@@ -1,0 +1,17 @@
+{
+    "initial_working_directory": "~",
+    "font_size_points": 14,
+    "pdf_previewer": "none",
+    "windows_terminal_shell": "win-git-bash",
+    "editor_theme": "Tomorrow Night 80s",
+    "jobs_tab_visibility": "shown",
+    "auto_detect_indentation": true,
+    "highlight_selected_line": true,
+    "highlight_r_function_calls": true,
+    "rainbow_parentheses": true,
+    "auto_append_newline": true,
+    "strip_trailing_whitespace": true,
+    "show_help_tooltip_on_idle": true,
+    "source_with_echo": true,
+    "default_encoding": "UTF-8"
+}
